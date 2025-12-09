@@ -3,7 +3,7 @@
     "plugins": [
         {
             "id": "aem-experimentation",
-            "title": "AEM Experimentation",
+            "title": "Experimentation",
             "environments": [
                 "dev", "preview"
             ],
