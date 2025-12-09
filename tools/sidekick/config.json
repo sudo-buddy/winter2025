@@ -1,0 +1,13 @@
+{
+    "project": "da-winter2025",
+    "plugins": [
+        {
+            "id": "aem-experimentation",
+            "title": "AEM Experimentation",
+            "environments": [
+                "dev", "preview"
+            ],
+            "event": "aem-experimentation-sidekick"
+        }
+    ]
+}
