@@ -7,7 +7,6 @@
             "environments": [
                 "dev", "preview"
             ],
-            "url": "/tools/sidekick/aem-experimentation.js",
             "event": "aem-experimentation-sidekick"
         }
     ]

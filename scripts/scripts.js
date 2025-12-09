@@ -126,6 +126,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // Load AEM Experimentation sidekick plugin
+  import('../tools/sidekick/aem-experimentation.js');
 }
 
 /**
