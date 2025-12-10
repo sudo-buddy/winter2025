@@ -5,11 +5,10 @@
             "id": "aem-experimentation",
             "title": "Experimentation",
             "environments": [
-                "dev", "preview", "da-edit"
+                "dev", "preview"
             ],
             "event": "aem-experimentation-sidekick",
-            "pinned": true,
-            "url": "https://experience.adobe.com/solutions/ExpSuccess-aem-experimentation-mfe/static-assets/resources/sidekick/client.js?source=bookmarklet"
+            "pinned": true
         }
     ]
 }

@@ -170,4 +170,13 @@
       sessionStorage.removeItem('aem_experimentation_open_panel');
       handleSidekickPluginButtonClick();
     }
+
+    // Keyboard shortcut: Ctrl+Shift+E to open Experimentation panel
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'E') {
+        e.preventDefault();
+        console.log('[AEM Exp] Keyboard shortcut triggered');
+        handleSidekickPluginButtonClick();
+      }
+    });
   })();

@@ -132,6 +132,22 @@ async function loadLazy(doc) {
 }
 
 /**
+ * Loads and initializes the Sidekick plugin handlers
+ */
+function loadSidekick() {
+  const sk = document.querySelector('aem-sidekick, helix-sidekick');
+  if (sk) {
+    // Sidekick already present, initialize handlers
+    import('./sidekick.js').then((mod) => mod.default());
+  } else {
+    // Wait for sidekick to be ready
+    document.addEventListener('sidekick-ready', () => {
+      import('./sidekick.js').then((mod) => mod.default());
+    }, { once: true });
+  }
+}
+
+/**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
  */
@@ -139,6 +155,9 @@ function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
+  
+  // Initialize sidekick handlers
+  loadSidekick();
 }
 
 async function loadPage() {
