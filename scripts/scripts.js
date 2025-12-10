@@ -129,22 +129,17 @@ async function loadLazy(doc) {
 
   // Load AEM Experimentation sidekick plugin
   import('../tools/sidekick/aem-experimentation.js');
+  
+  // Initialize sidekick handlers immediately
+  loadSidekick();
 }
 
 /**
  * Loads and initializes the Sidekick plugin handlers
  */
 function loadSidekick() {
-  const sk = document.querySelector('aem-sidekick, helix-sidekick');
-  if (sk) {
-    // Sidekick already present, initialize handlers
-    import('./sidekick.js').then((mod) => mod.default());
-  } else {
-    // Wait for sidekick to be ready
-    document.addEventListener('sidekick-ready', () => {
-      import('./sidekick.js').then((mod) => mod.default());
-    }, { once: true });
-  }
+  // Always load sidekick.js immediately (it adds floating button as fallback)
+  import('./sidekick.js').then((mod) => mod.default());
 }
 
 /**
